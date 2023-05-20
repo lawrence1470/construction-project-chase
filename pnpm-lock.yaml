@@ -2,6 +2,8 @@ lockfileVersion: 5.4
 
 specifiers:
   '@clerk/nextjs': ^4.18.2
+  '@headlessui/react': ^1.7.14
+  '@heroicons/react': ^2.0.18
   '@prisma/client': ^4.11.0
   '@t3-oss/env-nextjs': ^0.2.1
   '@tanstack/react-query': ^4.28.0
@@ -33,6 +35,8 @@ specifiers:
 
 dependencies:
   '@clerk/nextjs': 4.18.2_o6dt4yn4syzkhlixdxt4y57rzi
+  '@headlessui/react': 1.7.14_biqbaboplfbrettd7655fr4n2y
+  '@heroicons/react': 2.0.18_react@18.2.0
   '@prisma/client': 4.14.1_prisma@4.14.1
   '@t3-oss/env-nextjs': 0.2.2_zod@3.21.4
   '@tanstack/react-query': 4.29.7_biqbaboplfbrettd7655fr4n2y
@@ -190,6 +194,26 @@ packages:
     resolution: {integrity: sha512-LxcyMGxwmTh2lY9FwHPGWOHmYFCZvbrFCBZL4FzSSsxsRPuhrYUg/49/0KDfW8tnIEaEHtfmn6+NPN+1DqaNmA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
+
+  /@headlessui/react/1.7.14_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-znzdq9PG8rkwcu9oQ2FwIy0ZFtP9Z7ycS+BAqJ3R5EIqC/0bJGvhT7193rFf+45i9nnPsYvCQVW4V/bB9Xc+gA==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: ^16 || ^17 || ^18
+      react-dom: ^16 || ^17 || ^18
+    dependencies:
+      client-only: 0.0.1
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
+
+  /@heroicons/react/2.0.18_react@18.2.0:
+    resolution: {integrity: sha512-7TyMjRrZZMBPa+/5Y8lN0iyvUU/01PeMGX2+RE7cQWpEUIcb4QotzUObFkJDejj/HUH4qjP/eQ0gzzKs2f+6Yw==}
+    peerDependencies:
+      react: '>= 16'
+    dependencies:
+      react: 18.2.0
+    dev: false
 
   /@humanwhocodes/config-array/0.11.8:
     resolution: {integrity: sha512-UybHIJzJnR5Qc/MsD9Kr+RpO2h+/P1GhOwdiLPXK5TWk5sgTdu88bTD9UP+CKbPPh5Rni1u0GjAdYQLemG8g+g==}
