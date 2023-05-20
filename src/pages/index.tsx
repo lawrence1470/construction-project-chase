@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { ClerkProvider, useUser, SignIn, SignedOut } from "@clerk/nextjs";
 
 import { api } from "~/utils/api";
 
@@ -17,6 +18,7 @@ const navigation = [
 const Home: NextPage = () => {
   const hello = api.example.hello.useQuery({ text: "from tRPC" });
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { isLoaded, isSignedIn } = useUser();
 
   return (
     <>
@@ -58,12 +60,16 @@ const Home: NextPage = () => {
               ))}
             </div>
             <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-              <a
-                href="#"
-                className="text-sm font-semibold leading-6 text-gray-900"
-              >
-                Log in <span aria-hidden="true">&rarr;</span>
-              </a>
+              {isSignedIn ? (
+                <Link href="/dashboard">Go to dashboard</Link>
+              ) : (
+                <Link
+                  href="/sign-in"
+                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                >
+                  Log in
+                </Link>
+              )}
             </div>
           </nav>
           <Dialog
@@ -106,12 +112,16 @@ const Home: NextPage = () => {
                     ))}
                   </div>
                   <div className="py-6">
-                    <a
-                      href="#"
-                      className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                    >
-                      Log in
-                    </a>
+                    {isSignedIn ? (
+                      <Link href="/dashboard">Go to dashboard</Link>
+                    ) : (
+                      <Link
+                        href="/sign-in"
+                        className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                      >
+                        Log in
+                      </Link>
+                    )}
                   </div>
                 </div>
               </div>
